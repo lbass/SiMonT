@@ -64,10 +64,12 @@ public class MonitorServer {
 		private BigDecimal physicalFreeMemorySize;
 		private BigDecimal totalUsedPer;
 		private BigDecimal totalFreePer;
+		private String warnMessage;
 
 		@Override
 		public String toString() {
 			return "==== [" + HOST_NAME + "] Server State ====" +
+					"\n " + warnMessage +
 					"\n cpuLoad: " + cpuLoad + "%" +
 					"\n physicalMemorySize: " + physicalMemorySize +
 					"\n physicalFreeMemorySize: " + physicalFreeMemorySize +
