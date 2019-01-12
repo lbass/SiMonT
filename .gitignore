@@ -1,6 +1,3 @@
-/.settings/
-/.project
-/target/
-/.classpath
 .git
+/.idea/
 *.iml
