@@ -42,7 +42,7 @@ public class SimontApplication {
                     if(!isWarn && serverMonitorMetric.getUsedMemoryPer().longValue() > memoryThreshold) {
                         String warnMessage = String.format("MEMORY 임계치[%d] 초과 : %d",
                                 memoryThreshold,
-                                serverMonitorMetric.getFreeMemoryPer().longValue());
+                                serverMonitorMetric.getUsedMemoryPer().longValue());
                         serverMonitorMetric.setWarnMessage(warnMessage);
                         log.warn(warnMessage);
                         isWarn = true;
