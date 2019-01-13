@@ -60,6 +60,8 @@ public class MonitorServer {
 		log.info("physicalMemorySize: {}", physicalMemorySizeMb);
 		log.info("physicalFreeMemorySize: {}", physicalFreeMemorySizeMb);
 		log.info("committedVirtualMemorySize: {}", committedVirtualMemorySizeMb);
+		log.info("totalMemory: {}", RUNTIME.totalMemory());
+		log.info("freeMemory: {}", RUNTIME.freeMemory());
 
 		serverMonitorMetric.setPhysicalMemorySize(physicalMemorySizeMb);
 		serverMonitorMetric.setPhysicalFreeMemorySize(physicalFreeMemorySizeMb);
