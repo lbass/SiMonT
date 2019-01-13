@@ -39,10 +39,10 @@ public class SimontApplication {
                         log.warn(warnMessage);
                         isWarn = true;
                     }
-                    if(!isWarn && serverMonitorMetric.getTotalUsedPer().longValue() > memoryThreshold) {
+                    if(!isWarn && serverMonitorMetric.getUsedMemoryPer().longValue() > memoryThreshold) {
                         String warnMessage = String.format("MEMORY 임계치[%d] 초과 : %d",
                                 memoryThreshold,
-                                serverMonitorMetric.getTotalUsedPer().longValue());
+                                serverMonitorMetric.getFreeMemoryPer().longValue());
                         serverMonitorMetric.setWarnMessage(warnMessage);
                         log.warn(warnMessage);
                         isWarn = true;
@@ -57,7 +57,7 @@ public class SimontApplication {
                 }
 
             }
-        }, 30, 60, TimeUnit.SECONDS);
+        }, 60, 60, TimeUnit.SECONDS);
 
         ScheduledExecutorService propsScheduledThreadPool =
                 ThreadHelper.getScheduledExecutorService("SiMonT Properties" + "-%d", 1);
